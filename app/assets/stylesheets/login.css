@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: Helvetica, sans-serif;
+    background: url("/assets/bg.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+  }
+  .outer_container {
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 76, 96, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .outer_container form {
+    width: 70%;
+    color: #fff;
+  }
+  
+  .outer_container form h1 {
+    margin: 0 0 30px 0;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 200;
+  }
+  
+  .outer_container form label {
+    display: block;
+    font-size: larger;
+  }
+  
+  .outer_container form input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: larger;
+    color: #2c4c60;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  #email_error,
+  #password_error {
+    margin-top: 0;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+  }
+  
+  .outer_container form button {
+    margin-top: 20px;
+    display: block;
+    border: none;
+    outline: none;
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #2c4c60;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  .outer_container form button:active {
+    background: #2c4c60;
+    color: #fff;
+  }
+  
+  .outer_container form p {
+    text-align: center;
+  }
+  
+  .outer_container form p span {
+    font-weight: bold;
+  }
+  
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .outer_container form {
+      width: 50%;
+    }
+    .outer_container form h1 {
+      font-size: 3rem;
+    }
+    .outer_container form label {
+      font-size: 1.8rem;
+    }
+    .outer_container form input {
+      font-size: 1.8rem;
+    }
+    .outer_container form button {
+      font-size: 1.8rem;
+    }
+    .outer_container form p {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1025px) {
+    .outer_container form {
+      width: 25%;
+    }
+    .outer_container form button:hover {
+      background: #dbe5eb;
+    }
+    #redirect_to_register {
+      cursor: pointer;
+    }
+  }/*# sourceMappingURL=login.css.map */

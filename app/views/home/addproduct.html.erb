@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <%= stylesheet_link_tag 'addproduct.css' %>
+    <%# <link rel="stylesheet" href="../css/addproduct.css"> %>
+    <!-- <link rel="stylesheet" href="../css/addproduct_mobile.css">
+    <link rel="stylesheet" href="../css/addproduct_tablet.css">
+    <link rel="stylesheet" href="../css/addproduct_desktop.css"> -->
+</head>
+
+<body>
+    <div class="container_bg">
+        <h1 class="heading">Add Product</h1>
+        <div class="container">
+            <form action="" method="post">
+
+                <label for="">Product Name</label>
+                <input type="text">
+
+                <label for="">Brand</label>
+                <input type="text">
+
+                <label for="">Description</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                <label for="">Category</label>
+                <input type="text">
+
+                <label for="">Price (in $)</label>
+                <input type="number">
+
+                <label for="">Stock</label>
+                <input type="number">
+
+                <label for="">Product Images</label>
+                <div id="image1-preview"></div>
+                <input type="file" id="image1" name="image1" accept="image/*" onchange="previewImage(event, this.name)">
+
+                <!-- <label for="">Product Image 2</label> -->
+                <div id="image2-preview"></div>
+                <input type="file" id="image2" name="image2" accept="image/*" onchange="previewImage(event, this.name)">
+
+                <!-- <label for="">Product Image 3</label> -->
+                <div id="image3-preview"></div>
+                <input type="file" id="image3" name="image3" accept="image/*" onchange="previewImage(event, this.name)">
+
+                <!-- <label for="">Product Image 4</label> -->
+                <div id="image4-preview"></div>
+                <input type="file" id="image4" name="image4" accept="image/*" onchange="previewImage(event, this.name)">
+
+                <!-- <label for="">Product Image 5</label> -->
+                <div id="image5-preview"></div>
+                <input type="file" id="image5" name="image5" accept="image/*" onchange="previewImage(event, this.name)">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event, fieldName) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById(fieldName + "-preview");
+                output.innerHTML = '<img src="' + reader.result + '" alt="Preview">';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+
+</html>

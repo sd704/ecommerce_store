@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <%= stylesheet_link_tag 'cart.css' %>
+    <%# <link rel="stylesheet" href="../css/cart.css"> %>
+    <!-- <link rel="stylesheet" href="../css/cart_mobile.css">
+    <link rel="stylesheet" href="../css/cart_tablet.css">
+    <link rel="stylesheet" href="../css/cart_desktop.css"> -->
+</head>
+
+<body>
+
+    <h1 class="heading">Cart</h1>
+
+    <div class="table_container">
+        <div class="grid_item">
+            <h2>PRODUCT</h2>
+            <h2>DETAIL</h2>
+            <h2>PRICE</h2>
+        </div>
+
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grid_item">
+            <div class="product_image"></div>
+
+            <div class="detail">
+                <h1>Nike Air Jordan 1</h1>
+                <div class="quantity">
+                    <img src="/assets/substract.svg" alt="-">
+                    <p>1</p>
+                    <img src="/assets/add.svg" alt="+">
+                </div>
+            </div>
+            <p>$ 1000.00</p>
+        </div>
+
+        <div class="grand_price">
+            <h3>Grand Total:</h3>
+            <p>$ 5000.00</p>
+        </div>
+
+    </div>
+
+
+    <div class="payment">
+        <button id="paymentButton">Proceed to payment</button>
+    </div>
+
+    <%= javascript_include_tag 'cart' %>
+    <%# <script src="../scripts/cart.js"></script> %>
+</body>
+
+</html>

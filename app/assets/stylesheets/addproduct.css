@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background: url("/assets/bg.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  @font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+  }
+  .container_bg {
+    background: rgba(219, 229, 235, 0.6);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+  }
+  
+  .heading {
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 40px;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    color: #2c4c60;
+  }
+  
+  .container {
+    padding: 20px;
+    padding-top: 0;
+  }
+  .container form {
+    display: flex;
+    flex-direction: column;
+  }
+  .container form label {
+    font-size: large;
+    font-weight: bold;
+    color: #2c4c60;
+  }
+  .container form input,
+  .container form input[type=file],
+  .container form textarea {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-family: Helvetica, sans-serif;
+    font-size: large;
+    background: #fff;
+    color: #2c4c60;
+    border: #fff 1px solid;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .container form input:focus,
+  .container form textarea:focus {
+    border: #2c4c60 1px solid;
+  }
+  .container form textarea {
+    resize: vertical;
+  }
+  .container form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container form div img {
+    margin-top: 5px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  .container form button {
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+    background: #2c4c60;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Helvetica, sans-serif;
+  }/*# sourceMappingURL=addproduct.css.map */

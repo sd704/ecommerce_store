@@ -1,0 +1,115 @@
+/* Mobile */
+@media (min-width: 320px) and (max-width: 599px) {
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Helvetica, sans-serif;
+    }
+    .image_container {
+      height: 50vh;
+      padding-left: 10px;
+      padding-right: 10px;
+      background-position: center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .image_container img {
+      height: 50px;
+    }
+    .text_container {
+      padding: 20px;
+      box-shadow: rgb(44, 62, 80) 0px -15px 15px -15px;
+    }
+    .text_container .info h1 {
+      margin: 0;
+      font-weight: 200;
+    }
+    .text_container .info h2 {
+      margin: 10px 0 0 0;
+      color: #2c4c60;
+      font-weight: 200;
+    }
+    .text_container .info p {
+      margin: 10px 0 0 0;
+    }
+    .text_container .info button {
+      margin: 20px 0 0 0;
+      width: 100%;
+      font-size: larger;
+      font-weight: bold;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      background: #2c4c60;
+    }
+    .text_container .info button:active {
+      background: #567080;
+    }
+    .text_container .info .quantity {
+      margin: 20px 0 0 0;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: #2c4c60 1px solid;
+      border-radius: 5px;
+    }
+    .text_container .info .quantity img {
+      margin: auto;
+      height: 40px;
+      border-radius: 100%;
+    }
+    .text_container .info .quantity p {
+      margin: auto;
+      font-size: larger;
+      font-weight: bold;
+      color: #2c4c60;
+    }
+    .text_container .info .quantity img:active {
+      background: #dbe5eb;
+    }
+    .text_container .details p {
+      margin: 10px 0 0 0;
+      line-height: 1.5;
+    }
+    .text_container .details span {
+      color: #2c4c60;
+      font-weight: bold;
+      font-size: large;
+    }
+    .reviews {
+      padding: 20px;
+      padding-top: 0;
+    }
+    .reviews h2 {
+      font-weight: 400;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    .reviews .review_user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .reviews .review_user p {
+      font-size: large;
+      font-weight: bold;
+      margin: 0;
+      color: #2c4c60;
+    }
+    .reviews .rating {
+      margin: 5px 0 0 5px;
+    }
+    .reviews .text {
+      margin: 5px 0 0 5px;
+    }
+    .reviews .date {
+      margin: 5px 0 20px 5px;
+      color: #818589;
+    }
+  }/*# sourceMappingURL=product_mobile.css.map */

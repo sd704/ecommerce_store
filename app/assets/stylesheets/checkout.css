@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: Helvetica, sans-serif;
+    background: url("/assets/bg.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 76, 96, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container h1 {
+    margin: 20px 0 30px 0;
+    text-align: center;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 100;
+  }
+  .container p {
+    margin: 0 10px 30px 10px;
+    text-align: center;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: 100;
+  }
+  .container a {
+    text-decoration: none;
+    font-size: large;
+    color: #fff;
+  }
+  
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .container h1 {
+      font-size: 3rem;
+    }
+    .container p {
+      font-size: 1.8rem;
+    }
+    .container a {
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 1025px) {
+    .container h1 {
+      font-size: 4rem;
+    }
+    .container p {
+      font-size: 2rem;
+    }
+    .container a {
+      font-size: 1.2rem;
+    }
+  }/*# sourceMappingURL=checkout.css.map */

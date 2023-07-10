@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <%= stylesheet_link_tag 'login.css' %>
+    <%# <link rel="stylesheet" href="../css/login.css"> %>
+    <!-- <link rel="stylesheet" href="../css/login_mobile.css">
+    <link rel="stylesheet" href="../css/login_tablet.css">
+    <link rel="stylesheet" href="../css/login_desktop.css"> -->
+</head>
+
+<body>
+    <div class="outer_container">
+        <form action="" method="post">
+            <h1>Sign In</h1>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <p id="email_error"></p>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <p id="password_error"></p>
+
+            <button type="submit" id="submitButton">Submit</button>
+
+            <p id="redirect_to_register">Don't have an account? <span>Sign Up</span></p>
+
+        </form>
+    </div>
+
+    <%= javascript_include_tag 'emailAndPasswordValidation' %>
+    <%# <script src="../scripts/emailAndPasswordValidation.js" defer></script> %>
+</body>
+
+</html>

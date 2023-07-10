@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <%= stylesheet_link_tag 'register.css' %>
+    <%# <link rel="stylesheet" href="../css/register.css"> %>
+    <!-- <link rel="stylesheet" href="../css/register_mobile.css">
+    <link rel="stylesheet" href="../css/register_tablet.css">
+    <link rel="stylesheet" href="../css/register_desktop.css"> -->
+</head>
+
+<body>
+    <div class="outer_container">
+        <form action="" method="post">
+            <h1>Sign Up</h1>
+
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <p id="firstname_error"></p>
+
+            <label for="">Lastname</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <p id="lastname_error"></p>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <p id="email_error"></p>
+
+            <label for="phone">Phone</label>
+            <input type="number" id="phone" name="phone" required>
+            <p id="phone_error"></p>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            <p id="dob_error"></p>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <p id="password_error"></p>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            <p id="confirm_password_error"></p>
+
+            <button type="submit" id="submitButton">Submit</button>
+
+            <p id="redirect_to_login">Already have an account? <span>Sign In</span></p>
+
+        </form>
+    </div>
+
+    <%= javascript_include_tag 'register_validation' %>
+    <%# <script src="../scripts/register_validation.js" defer></script> %>
+</body>
+
+</html>

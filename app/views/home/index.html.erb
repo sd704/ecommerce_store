@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <%= stylesheet_link_tag 'index.css' %>
+</head>
+
+<body>
+
+    <div class="mobile_header">
+        <img src="/assets/menu.svg" alt="">
+        <h1 class="logo">Store</h1>
+        <img src="/assets/search_blue.svg" alt="" id="search">
+    </div>
+
+
+    <div class="container" id="container">
+
+        <h1>Popular Categories</h1>
+
+        <div class="categories">
+            <div class="category_image" style="background: url('/assets/mobile.webp');"></div>
+            <p>Mobile</p>
+
+            <div class="category_image" style="background: url('/assets/headset.avif');"></div>
+            <p>Headset</p>
+
+            <div class="category_image" style="background: url('/assets/fashion.avif');"></div>
+            <p>Fashion</p>
+
+            <div class="category_image" style="background: url('/assets/watches.avif');"></div>
+            <p>Watches</p>
+
+            <div class="category_image" style="background: url('/assets/shoes.avif');"></div>
+            <p>Shoes</p>
+        </div>
+
+        <h1>Latest</h1>
+
+        <div class="items_container" id="items_container"> </div>
+
+    </div>
+
+    <div class="dock">
+
+        <img src="/assets/home_solid.svg" alt="">
+        <p>Home</p>
+
+        <img src="/assets/category_solid.svg" alt="">
+        <p>Category</p>
+
+        <img src="/assets/cart_solid.svg" alt="" id="cart">
+        <p>Cart</p>
+
+        <img src="/assets/gear_solid.svg" alt="">
+        <p>Settings</p>
+
+        <img src="/assets/user_solid_white.svg" alt="" id="account">
+        <p>Account</p>
+
+    </div>
+
+    <%= javascript_include_tag 'home_fetchData' %>
+    <%= javascript_include_tag 'home_clicks' %>
+</body>
+
+</html>

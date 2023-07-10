@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  @font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+  }
+  .heading {
+    text-align: center;
+    font-weight: 200;
+    font-size: 40px;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    color: #2c4c60;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .table_container {
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  .table_container .grid_item {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 10px;
+    border-bottom: #2c4c60 1px solid;
+  }
+  .table_container .grid_item h2 {
+    margin: 0 auto;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #2c4c60;
+    font-size: medium;
+  }
+  .table_container .grid_item .product_image {
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    background: url("/assets/product2(Jordan 1 Mid).webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .table_container .grid_item .detail {
+    margin: auto;
+  }
+  .table_container .grid_item .detail h1 {
+    font-size: large;
+    margin: 0;
+    font-weight: 400;
+  }
+  .table_container .grid_item .detail p {
+    font-size: medium;
+    margin-top: 5px;
+  }
+  .table_container .grid_item .detail span {
+    font-weight: bold;
+  }
+  .table_container .grid_item p {
+    margin: auto;
+  }
+  .table_container .grid_item img {
+    margin: auto;
+  }
+  .table_container .grid_item2 {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    border-bottom: #2c4c60 1px solid;
+  }
+  .table_container .grid_item2 h2 {
+    margin: 0 auto;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #2c4c60;
+    font-size: medium;
+  }/*# sourceMappingURL=listings.css.map */

@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #dbe5eb;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  @font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+  }
+  .image_container {
+    padding: 50px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .image_container .profile_image {
+    height: 250px;
+    width: 250px;
+    background: url("/assets/man4.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+  }
+  .image_container .username {
+    margin: 10px;
+    color: #2c4c60;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+  }
+  
+  .info_container {
+    padding: 0 50px 0 50px;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .info_container span {
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-size: larger;
+    color: #2c4c60;
+  }
+  .info_container p {
+    font-size: large;
+    margin: auto 0;
+    color: #2c4c60;
+  }
+  
+  .options_container {
+    padding: 50px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .options_container a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #2c4c60;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+  }
+  
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .image_container .username {
+      font-size: 4rem;
+    }
+    .info_container,
+    .options_container {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+    .info_container span,
+    .info_container p,
+    .options_container a {
+      font-size: 1.8rem;
+    }
+  }
+  @media (min-width: 1025px) {
+    .info_container,
+    .options_container {
+      padding-left: 35%;
+      padding-right: 35%;
+    }
+    .info_container {
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .info_container span {
+      text-align: right;
+    }
+    .info_container span,
+    .info_container p,
+    .options_container a {
+      font-size: 1.4rem;
+    }
+  }/*# sourceMappingURL=profile.css.map */

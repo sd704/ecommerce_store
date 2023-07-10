@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding: 10px;
+    padding-top: 90px;
+    background: #dbe5eb;
+    font-family: Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: MyCustomFont;
+    src: url("/assets/fonts/Pacifico-Regular.ttf");
+}
+
+.mobile_header {
+    background: #fff;
+    padding: 5px 10px 5px 10px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2c4c60;
+}
+
+.mobile_header h1 {
+    margin: 0;
+    font-family: MyCustomFont, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.mobile_header img {
+    height: 30px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding-bottom: 80px;
+}
+
+.container h1 {
+    margin: 0;
+    margin-left: 10px;
+    color: #343434;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.container .categories {
+    display: grid;
+    margin: 10px 0 10px 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-auto-flow: column;
+}
+
+.container .categories .category_image {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.container .categories p {
+    margin: auto;
+    margin-top: 10px;
+    color: #2c4c60;
+}
+
+.container .items_container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.container .item_container {
+    cursor: pointer;
+    padding: 10px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+    gap: 10px;
+}
+
+.container .item_container .product_image {
+    height: 120px;
+    width: 120px;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    border-radius: 15px;
+}
+
+.container .item_container .info_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.container .item_container .info_container p {
+    margin: 0;
+}
+
+.container .item_container .info_container .product_name {
+    font-weight: bolder;
+    color: #343434;
+}
+
+.container .item_container .info_container .product_price {
+    color: #2c4c60;
+}
+
+.container .item_container .info_container .ratings img {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+}
+
+.container .item_container img {
+    margin: auto;
+    height: 30px;
+}
+
+.dock {
+    padding: 15px 0 15px 0;
+    background: #2c4c60;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-auto-flow: column;
+}
+
+.dock img {
+    margin: auto;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dock p {
+    margin: auto;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .items_container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px !important;
+    }
+
+    .item_container {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item_container p {
+        text-align: center;
+    }
+
+    .item_container .ratings {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .items_container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px !important;
+    }
+
+    .item_container {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item_container p {
+        text-align: center;
+    }
+
+    .item_container .ratings {
+        margin: 0 auto;
+    }
+}
+
+/*# sourceMappingURL=home.css.map */

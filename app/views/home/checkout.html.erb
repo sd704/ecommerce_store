@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <%= stylesheet_link_tag 'checkout.css' %>
+    <%# <link rel="stylesheet" href="../css/checkout.css"> %>
+    <!-- <link rel="stylesheet" href="../css/checkout_mobile.css">
+    <link rel="stylesheet" href="../css/checkout_tablet.css">
+    <link rel="stylesheet" href="../css/checkout_desktop.css"> -->
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="/assets/tick.svg" alt="OK" class="check_mark">
+        <h1>Thank you for your order!</h1>
+        <p>The order confirmation has been sent to johndoe@gmail.com</p>
+        <!-- <a href="home.html">Return to Shopping</a> -->
+        <a href="home.html">Redirecting to home in <span id="countdown">5</span></a>
+    </div>
+
+    <%= javascript_include_tag 'checkout_timer' %>
+    <%# <script src="../scripts/checkout_timer.js"></script> %>
+
+</body>
+
+</html>

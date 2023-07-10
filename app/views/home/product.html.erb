@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <%= stylesheet_link_tag 'product_mobile.css' %>
+    <%= stylesheet_link_tag 'product_tablet.css' %>
+    <%= stylesheet_link_tag 'product_desktop.css' %>
+    <!-- <link rel="stylesheet" href="../css/product.css"> -->
+    <%# <link rel="stylesheet" href="../css/product_mobile.css">
+    <link rel="stylesheet" href="../css/product_tablet.css">
+    <link rel="stylesheet" href="../css/product_desktop.css"> %>
+</head>
+
+<body>
+
+    <div class="grid">
+
+        <div class="image_container" id="image_container">
+            <img src="/assets/left.svg" alt="<" onclick="previousImage()">
+            <img src="/assets/right.svg" alt=">" onclick="nextImage()">
+        </div>
+
+        <div class="text_container">
+            <div class="info">
+                <h1>Nike Jordan 1 Mid</h1>
+                <h2>$ 1010.80</h2>
+                <p>⭐⭐⭐⭐</p>
+
+                <div class="buttons_grid">
+                    <div class="quantity">
+                        <img src="/assets/substract.svg" alt="-" id="decrease" onclick="decreaseCount()">
+                        <p id="cart_count">1</p>
+                        <img src="/assets/add.svg" alt="+" id="increase" onclick="increaseCount()">
+                    </div>
+                    <button id="cart">Add to Cart</button>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <p>Et voluptatem cupiditate non fugiat nisi sit nihil totam ea placeat
+                    recusandae rem repellendus soluta. Est possimus dolorem aut iure autem et velit modi et dolorum
+                    adipisci. Est
+                    error aliquam vel repudiandae veritatis nam quia neque et illum voluptatem sit sint molestiae.</p>
+                <p><span>Brand: </span>Nike</p>
+                <p><span>Seller: </span>James Paul</p>
+                <p><span>Stock: </span>10</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="reviews">
+        <h2>Reviews</h2>
+
+
+        <div class="review_grid">
+
+            <div class="review">
+                <div class="review_user">
+                    <img src="/assets/user_solid.svg" alt="">
+                    <p>John Doe</p>
+                </div>
+                <p class="rating">⭐⭐⭐⭐</p>
+                <p class="text">Lorem ipsum dolor sit amet. Aut dolores consequatur ex maiores rerum qui ipsa suscipit
+                    estiure nulla rem quos quia.</p>
+                <p class="date">12 June, 2022</p>
+            </div>
+
+            <div class="review">
+                <div class="review_user">
+                    <img src="/assets/user_solid.svg" alt="">
+                    <p>John Doe</p>
+                </div>
+                <p class="rating">⭐⭐⭐⭐</p>
+                <p class="text">Lorem ipsum dolor sit amet. Aut dolores consequatur ex maiores rerum qui ipsa suscipit
+                    estiure nulla rem quos quia.</p>
+                <p class="date">12 June, 2022</p>
+            </div>
+
+            <div class="review">
+                <div class="review_user">
+                    <img src="/assets/user_solid.svg" alt="">
+                    <p>John Doe</p>
+                </div>
+                <p class="rating">⭐⭐⭐⭐</p>
+                <p class="text">Lorem ipsum dolor sit amet. Aut dolores consequatur ex maiores rerum qui ipsa suscipit
+                    estiure nulla rem quos quia.</p>
+                <p class="date">12 June, 2022</p>
+            </div>
+
+            <div class="review">
+                <div class="review_user">
+                    <img src="/assets/user_solid.svg" alt="">
+                    <p>John Doe</p>
+                </div>
+                <p class="rating">⭐⭐⭐⭐</p>
+                <p class="text">Lorem ipsum dolor sit amet. Aut dolores consequatur ex maiores rerum qui ipsa suscipit
+                    estiure nulla rem quos quia.</p>
+                <p class="date">12 June, 2022</p>
+            </div>
+
+            <div class="review">
+                <div class="review_user">
+                    <img src="/assets/user_solid.svg" alt="">
+                    <p>John Doe</p>
+                </div>
+                <p class="rating">⭐⭐⭐⭐</p>
+                <p class="text">Lorem ipsum dolor sit amet. Aut dolores consequatur ex maiores rerum qui ipsa suscipit
+                    estiure nulla rem quos quia.</p>
+                <p class="date">12 June, 2022</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <%= javascript_include_tag 'product_images' %>
+    <%= javascript_include_tag 'product_clicks' %>
+    <%# <script src="../scripts/product_images.js"></script>
+    <script src="../scripts/product_clicks.js"></script> %>
+</body>
+
+</html>
