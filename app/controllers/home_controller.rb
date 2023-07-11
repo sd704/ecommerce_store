@@ -31,4 +31,10 @@ class HomeController < ApplicationController
 
   def profile
   end
+
+  # def serve_font
+  #   path = Rails.root.join("app", "assets", "fonts", params[:file])
+  #   send_file path, type: "font/ttf", disposition: "inline"
+  # end
+
 end
