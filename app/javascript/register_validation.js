@@ -58,6 +58,7 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     if (error.length > 0) { passwordError.innerHTML = "Password :" + error }
     else { passwordError.innerHTML = "" }
     if (pass != cPass) { confirmPasswordError.innerText = "Password doesn't match!" }
+    else { confirmPasswordError.innerText = "" }
 
     // Redirects to home if everything validates
     if (
@@ -68,7 +69,9 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
         passwordError.innerText === "" &&
         confirmPasswordError.innerText === ""
     ) {
-        window.location.href = 'home.html';
+        // window.location.href = 'home.html';
+        const form = document.getElementById('register_form')
+        form.submit()
     }
 });
 

@@ -15,22 +15,22 @@
 <body>
     <div class="image_container">
         <div class="profile_image"></div>
-        <h1 class="username">John Doe</h1>
+        <%# <h1 class="username">John Doe</h1> %>
+        <h1 class="username"><%= @user.firstname %> <%= @user.lastname %></h1>
     </div>
 
     <div class="info_container">
         <span>Email : </span>
-        <p>johndoe@gmail.com</p>
+        <p><%= @user.email %></p>
 
         <span>Phone : </span>
-        <p>9087654321</p>
+        <p><%= @user.phone %></p>
 
         <span>Address : </span>
-        <p>Qui delectus rerum non tenetur quas est dolores quam qui dolores beatae aut eius similique ea eveniet nostrum
-        </p>
+        <p><%= truncate(@user.address, length: 120) %></p>
 
         <span>D.O.B. : </span>
-        <p>27 May, 1990</p>
+        <p><%= @user.dob.strftime("%B %e, %Y") %></p>
     </div>
 
     <div class="options_container">

@@ -35,7 +35,11 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     else { passwordError.innerHTML = "" }
 
     // Redirects to home if everything validates
-    if (emailError.innerText === "" && error === "") { window.location.href = 'home.html'; }
+    if (emailError.innerText === "" && error === "") {
+        // window.location.href = 'home.html';
+        const form = document.getElementById('login_form')
+        form.submit()
+    }
 });
 
 // Redirect to register page 

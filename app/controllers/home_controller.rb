@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+  
   def index
+      @items = Item.order(created_at: :desc)
   end
 
   def login
@@ -8,7 +10,16 @@ class HomeController < ApplicationController
   def register
   end
 
+  def logout
+      session.delete(:user_id)
+      @_current_user = nil
+      redirect_to root_url, status: :see_other
+  end
+
   def product
+      @item = Item.find(params[:id])
+      seller = User.find(@item.user_id)
+      @sellername = seller.firstname+" "+seller.lastname
   end
 
   def addproduct
@@ -30,6 +41,7 @@ class HomeController < ApplicationController
   end
 
   def profile
+      @user = User.find(session[:user_id])
   end
 
   # def serve_font
