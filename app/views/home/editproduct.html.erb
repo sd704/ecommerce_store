@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>Edit Product</title>
     <%= stylesheet_link_tag 'addproduct.css' %>
 </head>
 
 <body>
     <div class="container_bg">
-        <h1 class="heading">Add Product</h1>
+        <h1 class="heading">Edit Product</h1>
         <div class="container">
-            <form action="/addproduct" method="post">
+            <form action="/editproduct/<%= @item.id %>" method="post">
                 <%= csrf_meta_tags %>
                 <label for="name">Product Name</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" value="<%= @item.name %>">
 
                 <label for="brand">Brand</label>
-                <input type="text" id="brand" name="brand">
+                <input type="text" id="brand" name="brand" value="<%= @item.brand %>">
 
                 <label for="desc">Description</label>
-                <textarea id="desc" name="desc" id="" cols="30" rows="10"></textarea>
+                <textarea id="desc" name="desc" id="" cols="30" rows="10"><%= @item.desc %></textarea>
 
                 <label for="category">Category</label>
-                <input type="text" id="category" name="category">
+                <input type="text" id="category" name="category" value="<%= @item.category %>">
 
                 <label for="price">Price (in $)</label>
-                <input type="number" id="price" name="price">
+                <input type="number" id="price" name="price" value="<%= @item.price %>">
 
                 <label for="stock">Stock</label>
-                <input type="number" id="stock" name="stock">
+                <input type="number" id="stock" name="stock" value="<%= @item.stock %>">
 
                 <label for="">Product Images</label>
                 <div id="image1-preview"></div>

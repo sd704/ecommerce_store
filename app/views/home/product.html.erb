@@ -35,7 +35,17 @@
                         <p id="cart_count">1</p>
                         <img src="/assets/add.svg" alt="+" id="increase" onclick="increaseCount()">
                     </div>
-                    <button id="cart" onclick="window.location.href='<%= cart_url %>'">Add to Cart</button>
+                    <% if logged_in? %>
+                        <% if @is_seller %>
+                            <button id="edit_product">Edit Product</button>
+                        <% elsif @item.stock==0 %>
+                            <button>Out of Stock</button>
+                        <% else %>
+                            <button id="cart">Add to Cart</button>
+                        <% end %>
+                    <% else %>
+                    <button id="login">Sign in to continue</button>
+                    <% end %>
                 </div>
 
             </div>
@@ -116,11 +126,25 @@
         </div>
 
     </div>
+ 
+    <script>
+        let count = document.getElementById('cart_count')
+
+        function increaseCount() {
+            if (parseInt(count.innerText) < <%= @item.stock.to_i %>) {
+                count.innerText = parseInt(count.innerText) + 1
+            }
+        }
+
+        function decreaseCount() {
+            if (parseInt(count.innerText) > 1) {
+                count.innerText = parseInt(count.innerText) - 1
+            }
+        }
+    </script>
 
     <%= javascript_include_tag 'product_images' %>
-    
-    <%# <script src="../scripts/product_images.js"></script>
-    <script src="../scripts/product_clicks.js"></script> %>
+    <%= javascript_include_tag 'product_add_to_cart' %>
 </body>
 
-</html>
+</html> 

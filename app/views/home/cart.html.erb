@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <%= stylesheet_link_tag 'cart.css' %>
-    <%# <link rel="stylesheet" href="../css/cart.css"> %>
-    <!-- <link rel="stylesheet" href="../css/cart_mobile.css">
-    <link rel="stylesheet" href="../css/cart_tablet.css">
-    <link rel="stylesheet" href="../css/cart_desktop.css"> -->
 </head>
 
 <body>
@@ -23,105 +19,37 @@
             <h2>PRICE</h2>
         </div>
 
-
+        <% totalPrice = 0.0 %>
+        <% @items.each do |item| %>
         <div class="grid_item">
             <div class="product_image"></div>
 
             <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
+                <% count_id = "cart_count_" + item.cart_item_id.to_s  %>
+                <h1><%= item.name %></h1>
                 <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
+                    <img src="/assets/substract.svg" alt="-" id="decrease" onclick="decreaseCount('<%= count_id %>',<%= item.price %>,<%= item.cart_item_id %>)">
+                    <p id="<%= count_id %>"><%= item.itemcount %></p>
+                    <img src="/assets/add.svg" alt="+" id="increase" onclick="increaseCount('<%= count_id %>',<%= item.price %>,<%= item.stock %>,<%= item.cart_item_id %>)">
                 </div>
             </div>
-            <p>$ 1000.00</p>
+            <p>$ <%= item.price %></p>
+            <% totalPrice = totalPrice + item.price * item.itemcount %>
         </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-
-            <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
-                <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
-                </div>
-            </div>
-            <p>$ 1000.00</p>
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-
-            <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
-                <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
-                </div>
-            </div>
-            <p>$ 1000.00</p>
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-
-            <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
-                <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
-                </div>
-            </div>
-            <p>$ 1000.00</p>
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-
-            <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
-                <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
-                </div>
-            </div>
-            <p>$ 1000.00</p>
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-
-            <div class="detail">
-                <h1>Nike Air Jordan 1</h1>
-                <div class="quantity">
-                    <img src="/assets/substract.svg" alt="-">
-                    <p>1</p>
-                    <img src="/assets/add.svg" alt="+">
-                </div>
-            </div>
-            <p>$ 1000.00</p>
-        </div>
+        <% end %>
 
         <div class="grand_price">
             <h3>Grand Total:</h3>
-            <p>$ 5000.00</p>
+            <p id="grandTotal">$ <%= totalPrice %></p>
         </div>
 
     </div>
-
 
     <div class="payment">
         <button id="paymentButton">Proceed to payment</button>
     </div>
 
     <%= javascript_include_tag 'cart' %>
-    <%# <script src="../scripts/cart.js"></script> %>
 </body>
 
 </html>

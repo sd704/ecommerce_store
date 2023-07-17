@@ -23,106 +23,18 @@
             <h2>EDIT</h2>
         </div>
 
-
+        <% @items.each do |item| %>
         <div class="grid_item">
             <div class="product_image"></div>
             <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: </span>$1000</p>
-                <p>17 May, 2021</p>
+                <h1><%= item.brand %> <%= item.name %></h1>
+                <p><span>Stock: </span><%= item.stock %></p>
+                <p><span>Price: </span>$<%= item.price %></p>
+                <p><%= item.created_at.to_date.strftime("%B %e, %Y") %></p>
             </div>
             <img src="/assets/edit.svg" alt="edit">
         </div>
-
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
-
-        <div class="grid_item">
-            <div class="product_image"></div>
-            <div class="detail">
-                <h1>Nike Air Jordan</h1>
-                <p><span>Stock: </span>1</p>
-                <p><span>Price: $</span>1000</p>
-                <p>17 May, 2021</p>
-            </div>
-            <img src="/assets/edit.svg" alt="edit">
-        </div>
+        <% end %>
 
     </div>
 

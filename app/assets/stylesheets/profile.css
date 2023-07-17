@@ -8,7 +8,7 @@ body {
   
   @font-face {
     font-family: MyCustomFont;
-    src: url("/assets/fonts/Pacifico-Regular.ttf");
+    src: url("/assets/Pacifico-Regular.ttf");
   }
   .image_container {
     padding: 50px;

@@ -10,7 +10,7 @@ body {
   
   @font-face {
     font-family: MyCustomFont;
-    src: url("/assets/fonts/Pacifico-Regular.ttf");
+    src: url("/assets/Pacifico-Regular.ttf");
   }
   .outer_container {
     height: -moz-fit-content;

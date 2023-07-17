@@ -38,6 +38,9 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     if (emailError.innerText === "" && error === "") {
         // window.location.href = 'home.html';
         const form = document.getElementById('login_form')
+        // const csrfToken = form.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        // const formData = new FormData(form);
+        // formData.append("authenticity_token", csrfToken); // Including the CSRF token in the form data
         form.submit()
     }
 });

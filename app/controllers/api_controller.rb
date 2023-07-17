@@ -1,6 +1,7 @@
 class ApiController < ApplicationController
-
-    skip_before_action :verify_authenticity_token, only: [:adduser, :authenticateuser, :addproduct]
+    before_action :require_login, only: [:addproduct, :addtocart ]
+    # protect_from_forgery prepend: true
+    skip_before_action :verify_authenticity_token, only: [:adduser, :authenticateuser, :addproduct, :editproduct, :addtocart, :updatecart, :payment]
     # This will skip the authenticity token verification for the adduser action while keeping it intact for other actions.
 
     def getproducts
@@ -28,13 +29,59 @@ class ApiController < ApplicationController
         end
     end
 
+    def editproduct
+        item = Item.find(params[:id])
+        item.name=params[:name]
+        item.desc=params[:desc]
+        item.brand=params[:brand]
+        item.category=params[:category]
+        item.price=params[:price]
+        item.stock=params[:stock]
+        if item.save
+            redirect_to '/product/%s' % params[:id]
+        end
+    end
+
     def updateproduct
     end
 
-    def getcart
+    def addtocart
+        @cartItem = CartItem.new
+        @cartItem.itemcount = params[:count]
+        @cartItem.user_id = session[:user_id]
+        @cartItem.item_id = params[:item_id]
+        if @cartItem.save
+            render json: { success: true }
+        end
     end
 
-    def updatecartitem
+    def updatecart
+        item = CartItem.find(params[:id])
+
+        if params[:count].to_i == 0
+            item.destroy
+            render json: { success: true }
+        else item.update(itemcount: params[:count])
+            render json: { success: true }
+        end
+    end
+
+    def payment
+        transaction = Transaction.new(user_id: session[:user_id], totalamount: params[:sum].to_f)
+        if transaction.save
+            if CartItem.where(user_id: session[:user_id], hasPurchased: nil).update_all(hasPurchased: true, transaction_id: transaction.id)
+                # if Item.joins(:cart_items).where(cart_items: { transaction_id: transaction.id }).update_all('items.stock = items.stock - cart_items.itemcount')
+                if Item.connection.execute("
+                    UPDATE items
+                    SET stock = stock - cart_items.itemcount
+                    FROM cart_items
+                    WHERE cart_items.transaction_id = #{transaction.id}
+                      AND cart_items.item_id = items.id
+                  ")
+                    render json: { success: true }
+                end
+            end
+        end
     end
 
     def getorders
@@ -106,4 +153,17 @@ class ApiController < ApplicationController
     # def user_params
     #     params.require(:user).permit(:firstname, :lastname, :dob, :phone, :email, :password, :address)
     # end
+
+
+  private
+
+  def require_login
+    unless logged_in?
+      redirect_to login_path, notice: 'Please log in to access this page.'
+    end
+  end
+
+  def logged_in?
+    session[:user_id].present?
+  end
 end

@@ -11,9 +11,14 @@
 <body>
 
     <div class="mobile_header">
-        <img src="/assets/menu.svg" alt="">
+        <% if logged_in? %>
+            <img src="/assets/logout.svg" alt="" id="logout" title="Logout">
+        <% else %>
+            <img src="/assets/login.svg" alt="" id="login" title="Login">
+        <% end %>
+        
         <h1 class="logo">Store</h1>
-        <img src="/assets/search_blue.svg" alt="" id="search">
+        <img src="/assets/search_blue.svg" alt="" id="search" title="Search">
     </div>
 
 
@@ -43,9 +48,9 @@
         <div class="items_container" id="items_container"> 
             <% @items.each do |item| %>
                 <div class="item_container" onclick="window.location.href='/product/<%= item.id %>'">
-                    <div class="product_image" style="background: red;"></div>
+                    <div class="product_image" style="background: url('assets/shoes.avif');"></div>
                     <div class="info_container">
-                        <p class="product_name"><%= item.name %></p>
+                        <p class="product_name"><%= item.brand %> <%= item.name %></p>
                         <p class="product_price">$<%= item.price %></p>
                         <div class="ratings"></div>
                     </div>
@@ -74,7 +79,7 @@
 
     </div>
 
-    <%= javascript_include_tag 'home_fetchData' %>
+    <%# 'home_fetchData'  %>
     <%= javascript_include_tag 'home_clicks' %>
 </body>
 

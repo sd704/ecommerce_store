@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_12_050034) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_14_063934) do
   create_table "cart_items", force: :cascade do |t|
     t.integer "itemcount"
     t.boolean "hasPurchased"
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_050034) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.integer "item_id", null: false
-    t.integer "transaction_id", null: false
+    t.integer "transaction_id"
     t.index ["item_id"], name: "index_cart_items_on_item_id"
     t.index ["transaction_id"], name: "index_cart_items_on_transaction_id"
     t.index ["user_id"], name: "index_cart_items_on_user_id"

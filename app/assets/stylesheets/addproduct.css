@@ -10,7 +10,7 @@ body {
   
   @font-face {
     font-family: MyCustomFont;
-    src: url("/assets/fonts/Pacifico-Regular.ttf");
+    src: url("/assets/Pacifico-Regular.ttf");
   }
   .container_bg {
     background: rgba(219, 229, 235, 0.6);

@@ -21,15 +21,3 @@ function nextImage() {
         document.getElementById('image_container').style.backgroundImage = `url(${imageLinks[++imageNo]})`;
     }
 }
-
-let count = document.getElementById('cart_count')
-
-function increaseCount() {
-    count.innerText = parseInt(count.innerText) + 1
-}
-
-function decreaseCount() {
-    if (parseInt(count.innerText) > 1) {
-        count.innerText = parseInt(count.innerText) - 1
-    }
-}
