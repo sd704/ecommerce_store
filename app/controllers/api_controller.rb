@@ -1,4 +1,5 @@
 class ApiController < ApplicationController
+    before_action :set_cache_headers
     before_action :require_login, only: [:addproduct, :addtocart ]
     # protect_from_forgery prepend: true
     skip_before_action :verify_authenticity_token, only: [:adduser, :authenticateuser, :addproduct, :editproduct, :addtocart, :updatecart, :payment]
@@ -46,12 +47,20 @@ class ApiController < ApplicationController
     end
 
     def addtocart
-        @cartItem = CartItem.new
-        @cartItem.itemcount = params[:count]
-        @cartItem.user_id = session[:user_id]
-        @cartItem.item_id = params[:item_id]
-        if @cartItem.save
-            render json: { success: true }
+        if  CartItem.exists?(user_id: session[:user_id], item_id: params[:item_id], hasPurchased: nil)
+            cartItem = CartItem.find_by(user_id: session[:user_id], item_id: params[:item_id], hasPurchased: nil)
+            cartItem.itemcount = params[:count]
+            if cartItem.save
+                render json: { success: true }
+            end
+        else
+            cartItem = CartItem.new
+            cartItem.itemcount = params[:count]
+            cartItem.user_id = session[:user_id]
+            cartItem.item_id = params[:item_id]
+            if cartItem.save
+                render json: { success: true }
+            end
         end
     end
 
@@ -165,5 +174,9 @@ class ApiController < ApplicationController
 
   def logged_in?
     session[:user_id].present?
+  end
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
   end
 end

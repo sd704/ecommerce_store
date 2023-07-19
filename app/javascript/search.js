@@ -1,3 +1,15 @@
+function compareByPriceAsc(a, b) { return a.price - b.price; }
+
+function compareByPriceDsc(a, b) { return b.price - a.price; }
+
+function checkRadioButton(itemList) {
+    var lowToHigh = document.getElementById("asc");
+    var highToLow = document.getElementById("dsc");
+    if (lowToHigh.checked) { itemList.sort(compareByPriceAsc); }
+    else if (highToLow.checked) { itemList.sort(compareByPriceDsc); }
+    return itemList;
+}
+
 document.getElementById('searchButton').addEventListener('click', () => {
 
     const itemsContainer = document.getElementById("items")
@@ -7,8 +19,8 @@ document.getElementById('searchButton').addEventListener('click', () => {
         name: document.getElementById('name').value,
         lower: document.getElementById('lowerRange').value,
         higher: document.getElementById('upperRange').value,
-        brand: document.getElementById('brand').value,
-        category: document.getElementById('category').value,
+        brand: document.getElementById('name').value,
+        category: document.getElementById('name').value,
     }
 
     const params = new URLSearchParams(itemData);
@@ -21,7 +33,13 @@ document.getElementById('searchButton').addEventListener('click', () => {
         }
     }).then(response => response.json())
         .then(data => {
-            data.list.map((product) => {
+            data = checkRadioButton(data.list)
+
+            if (data.length < 1) {
+                itemsContainer.innerHTML = "Sorry, no products found."
+            }
+
+            data.map((product) => {
                 itemsContainer.innerHTML += `
                 <div class="item_container" onclick="goToProduct(${product.id})">
                     <div class="product_image" style="background: url('/assets/product1\(Nike\ Dunk\ Low\).webp');"></div>
@@ -49,3 +67,4 @@ document.getElementById('searchButton').addEventListener('click', () => {
 function goToProduct(id) {
     window.location.href = `/product/${id}`
 }
+

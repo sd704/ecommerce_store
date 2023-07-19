@@ -10,15 +10,11 @@
 
 <body>
 
-    <div class="mobile_header">
-        <% if logged_in? %>
-            <img src="/assets/logout.svg" alt="" id="logout" title="Logout">
-        <% else %>
-            <img src="/assets/login.svg" alt="" id="login" title="Login">
-        <% end %>
-        
+    <div class="mobile_header">        
         <h1 class="logo">Store</h1>
+        <input type="text" id="query" name="query">
         <img src="/assets/search_blue.svg" alt="" id="search" title="Search">
+        <img src="/assets/tune.svg" alt="" id="custom"  title="Custom search">
     </div>
 
 
@@ -71,11 +67,16 @@
         <img src="/assets/cart_solid.svg" alt="" id="cart">
         <p>Cart</p>
 
-        <img src="/assets/gear_solid.svg" alt="">
-        <p>Settings</p>
-
         <img src="/assets/user_solid_white.svg" alt="" id="account">
         <p>Account</p>
+
+        <% if logged_in? %>
+            <img src="/assets/logout_white.svg" alt="" id="logout">
+            <p>Logout</p>
+        <% else %>
+            <img src="/assets/login_white.svg" alt="" id="login">
+            <p>Login</p>
+        <% end %>
 
     </div>
 

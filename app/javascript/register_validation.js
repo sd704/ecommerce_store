@@ -51,11 +51,11 @@ document.getElementById("submitButton").addEventListener("click", (event) => {
     else { phoneError.innerText = "" }
 
     // Password Checks
-    if (pass.length < 8) { error += "\n➤ should be at least 8 characters" }
-    if (!lowerCaseCheck.test(pass)) { error += "\n➤ should have lowercase characters" }
-    if (!upperCaseCheck.test(pass)) { error += "\n➤ should have uppercase characters" }
-    if (!digitCheck.test(pass)) { error += "\n➤ should have digits" }
-    if (error.length > 0) { passwordError.innerHTML = "Password :" + error }
+    if (pass.length < 8) { error += ", at least 8 characters" }
+    if (!lowerCaseCheck.test(pass)) { error += ", lowercase characters" }
+    if (!upperCaseCheck.test(pass)) { error += ", uppercase characters" }
+    if (!digitCheck.test(pass)) { error += ", digits" }
+    if (error.length > 0) { passwordError.innerHTML = "Password should have" + error }
     else { passwordError.innerHTML = "" }
     if (pass != cPass) { confirmPasswordError.innerText = "Password doesn't match!" }
     else { confirmPasswordError.innerText = "" }

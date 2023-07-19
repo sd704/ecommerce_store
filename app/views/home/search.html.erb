@@ -19,8 +19,14 @@
 
             <div class="search_form">
                 <!-- <form action="" method="get"> -->
-                <p>Product Name:</p>
+                <p>Filter:</p>
                 <input type="text" id="name">
+
+                <%# <p>Category:</p>
+                <input type="text" id="category">
+
+                <p>Brand:</p>
+                <input type="text" id="brand"> %>
 
                 <p>Price range:</p>
                 <div class="price_range">
@@ -28,13 +34,19 @@
                     <p>to</p>
                     <input type="number" id="upperRange">
                 </div>
-
-                <p>Category:</p>
-                <input type="text" id="category">
-
-                <p>Brand:</p>
-                <input type="text" id="brand">
                 <!-- </form> -->
+            </div>
+
+            <div class="sortfields">
+                <p>Price:</p>
+                <div>
+                    <input type="radio" id="asc" name="sort" value="asc">
+                    <label for="asc">Low to High</label>
+                </div>
+                <div>
+                    <input type="radio" id="dsc" name="sort" value="dsc">
+                    <label for="dsc">High to Low</label>
+                </div>
             </div>
 
             <div class="search_button" id="searchButton">

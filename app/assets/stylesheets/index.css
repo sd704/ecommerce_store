@@ -21,6 +21,7 @@ body {
     right: 0;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
     color: #2c4c60;
 }
@@ -29,6 +30,16 @@ body {
     margin: 0;
     font-family: MyCustomFont, Helvetica, sans-serif;
     font-weight: 100;
+}
+
+.mobile_header input {
+    border: none;
+    border-bottom: 1px solid #2c4c60;
+    outline: none;
+    padding: 5px;
+    font-size: medium;
+    color: #2c4c60;
+    width: 100%;
 }
 
 .mobile_header img {

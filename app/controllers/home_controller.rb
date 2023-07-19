@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   helper_method :logged_in?
+  before_action :set_cache_headers
   before_action :require_login, only: [:cart, :profile, :addproduct, :orders, :checkout, :listings]
   before_action :is_user_seller, only: [:editproduct]
   
@@ -64,12 +65,17 @@ class HomeController < ApplicationController
     brand = params[:brand]
     category = params[:category]
 
-    items = Item.all
-    items = items.where('name LIKE ?', "%#{name}%") if name.present?
+    # items = Item.all
+    items = Item.where("name LIKE ? OR brand LIKE ? OR category LIKE ?", "%#{name}%", "%#{brand}%", "%#{category}%")
     items = items.where('price < ?', high) if high.present?
     items = items.where('price > ?', low) if low.present?
-    items = items.where('category LIKE ?', "%#{category}%") if category.present?
-    items = items.where('brand LIKE ?', "%#{brand}%") if brand.present?
+
+    # if low.present? && high.present?
+    #   items = items.where("price >= ? AND price <= ?", low, high)
+    # end
+    # items = items.where('name LIKE ?', "%#{name}%") if name.present?
+    # items = items.where('category LIKE ?', "%#{category}%") if category.present?
+    # items = items.where('brand LIKE ?', "%#{brand}%") if brand.present?
 
     render json: { list: items }
   end
@@ -95,6 +101,10 @@ class HomeController < ApplicationController
       # redirect_to '/product/%s' % params[:id]
       redirect_to home_path
     end
+  end
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
   end
 
 end

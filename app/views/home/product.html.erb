@@ -30,21 +30,21 @@
                 <p>⭐⭐⭐⭐</p>
 
                 <div class="buttons_grid">
-                    <div class="quantity">
-                        <img src="/assets/substract.svg" alt="-" id="decrease" onclick="decreaseCount()">
-                        <p id="cart_count">1</p>
-                        <img src="/assets/add.svg" alt="+" id="increase" onclick="increaseCount()">
-                    </div>
                     <% if logged_in? %>
                         <% if @is_seller %>
                             <button id="edit_product">Edit Product</button>
                         <% elsif @item.stock==0 %>
                             <button>Out of Stock</button>
                         <% else %>
+                            <div class="quantity">
+                                <img src="/assets/substract.svg" alt="-" id="decrease" onclick="decreaseCount()">
+                                <p id="cart_count">1</p>
+                                <img src="/assets/add.svg" alt="+" id="increase" onclick="increaseCount()">
+                            </div>
                             <button id="cart">Add to Cart</button>
                         <% end %>
                     <% else %>
-                    <button id="login">Sign in to continue</button>
+                        <button id="login">Sign in to continue</button>
                     <% end %>
                 </div>
 
